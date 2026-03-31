@@ -292,7 +292,7 @@ Migration guides for major version upgrades will be documented here.
 ## Notes
 
 ### API Keys Required
-- **requesthunt**: CLI browser auth (`requesthunt auth login`) or REQUESTHUNT_API_KEY (requesthunt.com/dashboard)
+- **requesthunt**: CLI device code auth (`requesthunt auth login`) or REQUESTHUNT_API_KEY (requesthunt.com/dashboard)
 - **twitter**: TWITTERAPI_API_KEY (twitterapi.io, ~$0.15-0.18/1k requests)
 - **logo-creator**: GEMINI_API_KEY, REMOVE_BG_API_KEY, RECRAFT_API_KEY
 - **banner-creator**: GEMINI_API_KEY (Google AI Studio)

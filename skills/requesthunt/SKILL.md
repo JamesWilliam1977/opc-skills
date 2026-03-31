@@ -9,13 +9,13 @@ Generate user demand research reports by collecting and analyzing real user feed
 
 ## Prerequisites
 
-Install the CLI and authenticate via browser:
+Install the CLI and authenticate:
 ```bash
 curl -fsSL https://requesthunt.com/cli | sh
 requesthunt auth login
 ```
 
-Browser auth opens an approval page — the human must click "Approve". Verify with:
+The CLI displays a verification code and opens `https://requesthunt.com/device` — the human must enter the code to approve. Verify with:
 ```bash
 requesthunt config show
 ```
@@ -122,7 +122,7 @@ requesthunt config show                                      # Check auth status
 
 ## API Info
 - **Base URL**: https://requesthunt.com
-- **Auth**: Browser login (`requesthunt auth login`) or manual API key
+- **Auth**: Device code login (`requesthunt auth login`) or manual API key
 - **Rate Limits**:
   - Free tier: 100 credits/month, 10 req/min
   - Pro tier: 2,000 credits/month, 60 req/min
