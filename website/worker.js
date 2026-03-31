@@ -465,7 +465,7 @@ Agent Skills Standard: https://agentskills.io
       name: "How can I use requesthunt for product validation?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "requesthunt scrapes feature requests from Reddit, Twitter/X, and GitHub to validate product ideas. Run 'python3 scripts/scrape_topic.py your-idea' to find real user pain points. Analyze the data to identify demand, pricing expectations, and competitor gaps before building.",
+        text: "requesthunt scrapes feature requests from Reddit, Twitter/X, and GitHub to validate product ideas. Run 'requesthunt scrape start your-idea' to find real user pain points. Analyze the data to identify demand, pricing expectations, and competitor gaps before building.",
       },
     });
     faqItems.push({
@@ -1572,7 +1572,7 @@ function getFallbackConfig() {
             codex: "npx skills add ReScienceLab/opc-skills --skill requesthunt",
           },
         },
-        commands: ['python3 scripts/search_requests.py "{query}" --expand'],
+        commands: ['requesthunt search "{query}" --expand'],
         links: {
           github:
             "https://github.com/ReScienceLab/opc-skills/tree/main/skills/requesthunt",

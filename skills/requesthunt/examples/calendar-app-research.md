@@ -17,19 +17,15 @@ I'll help you conduct a deep investigation into Calendar apps using RequestHunt.
 **Checking API Usage:**
 
 ```bash
-python3 scripts/get_usage.py
+requesthunt usage
 ```
 
 ```
-# RequestHunt API Usage
-
-## Cached Requests
-- **Used**: 1 / 2000
-- **Remaining**: 1999
-
-## Realtime Requests
-- **Used**: 64 / 500
-- **Remaining**: 436
+tier: pro
+credits_used: 65
+credits_limit: 2000
+credits_remaining: 1935
+rate_limit: 60 req/min
 ```
 
 API is working. Before I start collecting data, let me clarify the research scope:
@@ -54,7 +50,7 @@ API is working. Before I start collecting data, let me clarify the research scop
 **Step 1: Scrape Topic**
 
 ```bash
-python3 scripts/scrape_topic.py "scheduling-tools" --platforms reddit,x,github
+requesthunt scrape start "scheduling-tools" --platforms reddit,x,github
 ```
 
 ```
@@ -68,7 +64,7 @@ python3 scripts/scrape_topic.py "scheduling-tools" --platforms reddit,x,github
 **Step 2: Search for Cal.com feedback**
 
 ```bash
-python3 scripts/search_requests.py "cal.com" --expand --platforms reddit,x,github --limit 50
+requesthunt search "cal.com" --expand --platforms reddit,x,github --limit 50
 ```
 
 **Results (50 requests):**
@@ -89,7 +85,7 @@ python3 scripts/search_requests.py "cal.com" --expand --platforms reddit,x,githu
 **Step 3: Search for Calendly feedback**
 
 ```bash
-python3 scripts/search_requests.py "calendly" --expand --platforms reddit,x,github --limit 50
+requesthunt search "calendly" --expand --platforms reddit,x,github --limit 50
 ```
 
 **Results (18 requests):**
@@ -106,7 +102,7 @@ python3 scripts/search_requests.py "calendly" --expand --platforms reddit,x,gith
 **Step 4: Search for appointment scheduling pain points**
 
 ```bash
-python3 scripts/search_requests.py "appointment scheduling" --expand --platforms reddit,x --limit 30
+requesthunt search "appointment scheduling" --expand --platforms reddit,x --limit 30
 ```
 
 **Key findings:**
@@ -118,7 +114,7 @@ python3 scripts/search_requests.py "appointment scheduling" --expand --platforms
 **Step 5: Search for booking software feedback**
 
 ```bash
-python3 scripts/search_requests.py "booking software" --expand --platforms reddit,x --limit 30
+requesthunt search "booking software" --expand --platforms reddit,x --limit 30
 ```
 
 **Key findings:**
@@ -129,7 +125,7 @@ python3 scripts/search_requests.py "booking software" --expand --platforms reddi
 **Step 6: Search for scheduling pain points**
 
 ```bash
-python3 scripts/search_requests.py "scheduling pain" --expand --platforms reddit,x --limit 30
+requesthunt search "scheduling pain" --expand --platforms reddit,x --limit 30
 ```
 
 **Key findings:**
@@ -140,7 +136,7 @@ python3 scripts/search_requests.py "scheduling pain" --expand --platforms reddit
 **Step 7: Search for no-show management**
 
 ```bash
-python3 scripts/search_requests.py "no-show booking" --expand --platforms reddit,x --limit 20
+requesthunt search "no-show booking" --expand --platforms reddit,x --limit 20
 ```
 
 **Key findings:**
@@ -296,8 +292,8 @@ This report analyzed **150+ real user feedback items** collected via RequestHunt
 
 ## Key Takeaways
 
-1. **scrape_topic.py** triggers background scraping for a topic across platforms
-2. **search_requests.py --expand** fetches fresh data in realtime (uses quota)
+1. **`requesthunt scrape start`** triggers background scraping for a topic across platforms
+2. **`requesthunt search --expand`** fetches fresh data in realtime (uses credits)
 3. **Multiple search terms** help capture different aspects of the same problem
 4. **Quantitative data** (votes, comments) helps prioritize findings
 5. **Final report** synthesizes patterns into actionable insights
