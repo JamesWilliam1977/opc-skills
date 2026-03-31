@@ -32,9 +32,13 @@ Each skill maintains its own independent version. Use this matrix to understand 
 
 ## [Unreleased]
 
+## Released Versions
+
+## [1.1.0] - 2026-03-31
+
 ### requesthunt
 
-#### [2.0.0]
+#### [2.0.0] - 2026-03-31
 - **Changed**: Switched from Python scripts to `requesthunt` Rust CLI as the sole interface
 - **Added**: Browser authentication via `requesthunt auth login` (with `config set-key` fallback for headless/CI)
 - **Added**: CLI commands in skills.json registry (search, list, scrape start/status, topics, usage)
@@ -43,8 +47,6 @@ Each skill maintains its own independent version. Use this matrix to understand 
 - **Changed**: Switched usage and pricing documentation from cached/realtime quotas to the unified credits model
 - **Removed**: Python scripts (`scripts/`) — replaced entirely by CLI commands
 - **Fixed**: Updated RequestHunt settings links to use `/dashboard`
-
-## Released Versions
 
 ## [1.0.11] - 2026-03-13
 
@@ -279,8 +281,8 @@ Each skill maintains its own independent version. Use this matrix to understand 
 
 | Version | Status | Release Date | Notable Changes |
 |---------|--------|--------------|-----------------|
+| 1.1.0 | Stable | 2026-03-31 | requesthunt v2.0.0 — CLI-first, Python scripts removed |
 | 1.0.0 | Stable | 2025-01-21 | Initial release with 9 core skills |
-| Unreleased | Development | TBD | Documentation and workflow improvements |
 
 ## Migration Guides
 
